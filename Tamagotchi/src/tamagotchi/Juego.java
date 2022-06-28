@@ -20,6 +20,7 @@ public class Juego extends javax.swing.JFrame {
     public Juego() {
         //inicializo el objeto tamagotchi
         pet = new Tamagotchi(50, 50, 50, "rodolfo");
+        
         //TODO pedir al usuario el nombre 
         //Debieria estar en ventana emergente al precionar Jugar en Inicio
         //Que ese nombre se muestre como titulo de esta ventana y sea asignado al pet
@@ -30,6 +31,8 @@ public class Juego extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/icon.png")).getImage());
         
         //muestro stats en pantalla al iniciar
+        //TODO averiguar mostrar sin ' +"" '
+        
         lblSalud.setText(pet.getSalud()+"");
         lblEnergia.setText(pet.getEnergia()+"");
         lblAnimo.setText(pet.getAnimo()+"");
@@ -198,13 +201,18 @@ public class Juego extends javax.swing.JFrame {
     
     
     //metodo para mostrar estadisticas en pantalla
+    
+    //TODO probar funconlidad
     private void mostrarStats(){
         lblSalud.setText(pet.getSalud()+"");
         lblAnimo.setText(pet.getAnimo()+"");
         lblEnergia.setText(pet.getEnergia()+"");
     }
     
+    
+    //TODO avergiuar image en jlabel
     //prueba para imagen
+    
     
     //metodos para funcionalidad de los botones
     private void btnBañarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBañarActionPerformed
@@ -284,3 +292,6 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel lblSalud;
     // End of variables declaration//GEN-END:variables
 }
+
+
+//TODO JTattoo negro
