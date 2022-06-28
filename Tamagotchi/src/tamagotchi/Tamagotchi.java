@@ -35,6 +35,7 @@ public class Tamagotchi {
     }
 
     //getters and setters
+    //TODO Ver si son necesarios
 
     public int getEnergia(){
         return energia;
@@ -79,7 +80,9 @@ public class Tamagotchi {
     }
 
     //metodos
+    
     //metodo comun para establer el uso de max y min stats
+    //TODO ver por qué no funciona para mostrar las variables en pantalla
     
     public void modifica(int var, int cantidad){
         if (var+ cantidad<= maxStat) {
@@ -91,6 +94,10 @@ public class Tamagotchi {
     }
     
     //metodos a usar
+    //TODO Arreglar modifica() y utlizar en todos los metodos para evitar repetición de codigo
+    //TODO Def .random en bañar, si cada vez o por pet
+    //TODO Jugar ventana emergente si no tiene ganas
+    
     public void comer(){
         modifica(salud,30);
         
@@ -103,7 +110,6 @@ public class Tamagotchi {
             } else{
                 salud = maxStat;    
             }
-            
         }
         else{
             if ((salud+10)<maxStat) {
@@ -113,8 +119,6 @@ public class Tamagotchi {
                 animo -= 10;    
             }
         }
-
-        
     }
     
     public void jugar(){
