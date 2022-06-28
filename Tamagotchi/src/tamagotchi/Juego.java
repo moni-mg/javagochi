@@ -20,6 +20,9 @@ public class Juego extends javax.swing.JFrame {
     public Juego() {
         //inicializo el objeto tamagotchi
         pet = new Tamagotchi(50, 50, 50, "rodolfo");
+        //TODO pedir al usuario el nombre 
+        //Debieria estar en ventana emergente al precionar Jugar en Inicio
+        //Que ese nombre se muestre como titulo de esta ventana y sea asignado al pet
         
         initComponents();
         setSize(600, 500);
