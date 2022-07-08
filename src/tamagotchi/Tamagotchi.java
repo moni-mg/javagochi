@@ -116,20 +116,20 @@ public class Tamagotchi {
     
     public void mimar(){    
         if ((animo+10)<maxStat) {
-                animo += 30;
+                animo += 10;
         } else{
                 animo = maxStat;    
         }
     }
     
     public void dormir(){
-        if ((animo+30)<maxStat) {
-                animo += 30;
+        if ((animo+20)<maxStat) {
+                animo += 20;
         } else{
                 animo = maxStat;    
         }
-        if ((energia+30)<maxStat) {
-                energia += 30;
+        if ((energia+20)<maxStat) {
+                energia += 20;
         } else{
                 energia = maxStat;    
         }

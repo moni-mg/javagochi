@@ -9,7 +9,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import java.awt.Font;
-import javax.swing.Timer;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -104,15 +105,13 @@ public class Juego extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSalud)
-                    .addComponent(lblEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblAnimo)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(lblSalud)
+                .addComponent(lblEnergia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAnimo)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         btnJugar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -155,7 +154,7 @@ public class Juego extends javax.swing.JFrame {
             }
         });
 
-        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/normal_1.gif"))); // NOI18N
+        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/normal.gif"))); // NOI18N
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/fondo.gif"))); // NOI18N
 
@@ -187,13 +186,13 @@ public class Juego extends javax.swing.JFrame {
                         .addGap(71, 71, 71))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(lblFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addComponent(lblFondo)
+                    .addGap(0, 37, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(23, 23, 23)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(lblPet)
@@ -215,9 +214,7 @@ public class Juego extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,6 +231,25 @@ public class Juego extends javax.swing.JFrame {
         lblEnergia.setText(pet.getEnergia() + "");
     }
     
+    //metodo para volver a la imagen "normal"
+    public void volverAImagen() {
+
+        Timer timer = new Timer();
+
+        TimerTask fiveSecondsLater;
+        fiveSecondsLater = new TimerTask() {
+            
+            @Override
+            public void run() {
+
+                lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/normal.gif")));
+            }
+        };
+
+        timer.schedule(fiveSecondsLater, 2500);
+    }
+    
+    
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         if (pet.getEnergia()>40) {
             pet.jugar();
@@ -248,21 +264,30 @@ public class Juego extends javax.swing.JFrame {
     private void btnComerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComerActionPerformed
         pet.comer();
         mostrarStats();
+        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/comiendo.gif")));
+        volverAImagen();
+        
     }//GEN-LAST:event_btnComerActionPerformed
 
     private void btnBañarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBañarActionPerformed
         pet.bañar();
         mostrarStats();
+        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/bañado.gif")));
+        volverAImagen();
     }//GEN-LAST:event_btnBañarActionPerformed
 
     private void btnMimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMimarActionPerformed
         pet.mimar();
         mostrarStats();
+        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/mimado.gif")));
+        volverAImagen();
     }//GEN-LAST:event_btnMimarActionPerformed
 
     private void btnDormirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDormirActionPerformed
         pet.dormir();
         mostrarStats();
+        lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/sleeping.png")));
+        volverAImagen();
     }//GEN-LAST:event_btnDormirActionPerformed
 
 
