@@ -27,9 +27,9 @@ public class Tamagotchi {
     public Tamagotchi(){}
 
     public Tamagotchi(int energia, int salud, int animo, String nombre){
-        this.energia = energia;
-        this.salud = salud;
-        this.animo = animo;
+        setEnergia(energia);
+        setSalud(salud);
+        setAnimo(animo);
         this.nombre = nombre;
     }
 
