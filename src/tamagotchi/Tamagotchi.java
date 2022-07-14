@@ -17,8 +17,6 @@ public class Tamagotchi {
     private int energia;
     private int salud;
     private int animo;
-    //información
-    public String nombre;
     Random gustar = new Random();       
     //max y min de estadisticas
     public int maxStat = 100;
@@ -26,11 +24,10 @@ public class Tamagotchi {
     //Constructores
     public Tamagotchi(){}
 
-    public Tamagotchi(int energia, int salud, int animo, String nombre){
+    public Tamagotchi(int energia, int salud, int animo){
         setEnergia(energia);
         setSalud(salud);
         setAnimo(animo);
-        this.nombre = nombre;
     }
 
     //getters and setters

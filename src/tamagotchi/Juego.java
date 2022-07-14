@@ -25,7 +25,7 @@ public class Juego extends javax.swing.JFrame {
      */
     public Juego() {
         //inicializo el objeto tamagotchi
-        pet = new Tamagotchi(50, 50, 50, "rodolfo");
+        pet = new Tamagotchi(50, 50, 50);
 
         initComponents();
         this.setResizable(false);
@@ -65,6 +65,7 @@ public class Juego extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setRequestFocusEnabled(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblSalud.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblSalud.setText("0");
@@ -93,7 +94,7 @@ public class Juego extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSalud)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(lblEnergia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,6 +115,8 @@ public class Juego extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 23, 530, -1));
+
         btnJugar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnJugar.setText("Jugar");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +124,7 @@ public class Juego extends javax.swing.JFrame {
                 btnJugarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 447, 98, 34));
 
         btnComer.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnComer.setText("Comer");
@@ -129,6 +133,7 @@ public class Juego extends javax.swing.JFrame {
                 btnComerActionPerformed(evt);
             }
         });
+        jPanel1.add(btnComer, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 447, 98, 34));
 
         btnBañar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnBañar.setText("Bañar");
@@ -137,6 +142,7 @@ public class Juego extends javax.swing.JFrame {
                 btnBañarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBañar, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 447, 98, 34));
 
         btnMimar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnMimar.setText("Mimar");
@@ -145,6 +151,7 @@ public class Juego extends javax.swing.JFrame {
                 btnMimarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnMimar, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 447, 98, 34));
 
         btnDormir.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnDormir.setText("Dormir");
@@ -153,68 +160,19 @@ public class Juego extends javax.swing.JFrame {
                 btnDormirActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDormir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 447, 98, 34));
 
         lblPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/normal.gif"))); // NOI18N
+        jPanel1.add(lblPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 189, 289, -1));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tamagotchi/fondo.gif"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnComer, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnBañar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMimar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblPet, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)))
-                        .addComponent(btnDormir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(lblFondo)
-                    .addGap(0, 37, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
-                .addComponent(lblPet)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBañar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMimar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnDormir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnComer, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(lblFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 490));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +207,6 @@ public class Juego extends javax.swing.JFrame {
         timer.schedule(fiveSecondsLater, 2500);
     }
     
-    
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         if (pet.getEnergia()>40) {
             pet.jugar();
@@ -257,7 +214,7 @@ public class Juego extends javax.swing.JFrame {
         } else {
             JOptionPane j = new JOptionPane();
             j.setSize(400, 300);
-            JOptionPane.showMessageDialog(j,"No quiero jugar! \n Estoy muy cansado.","Dejame mimir",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(j,"No quiero jugar! \n Estoy muy cansado.","Dejame mimir (＞﹏＜)",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnJugarActionPerformed
 
